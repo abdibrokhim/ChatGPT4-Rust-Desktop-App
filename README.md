@@ -1,3 +1,19 @@
+# ChatGPT Desktop application written in TypeScript and React using Next.js, and Rust using Tauri.
+
+## External links
+Tauri - https://tauri.app/
+
+Rust programming language - https://doc.rust-lang.org/
+
+Next.js - https://nextjs.org/
+
+React - https://reactjs.org/
+
+TypeScript - https://www.typescriptlang.org/
+
+Tailwind CSS - https://tailwindcss.com/
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
