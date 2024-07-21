@@ -32,7 +32,7 @@ export default function Notes() {
             </ul>
           </div>
           <div className="text-white pl-2 mt-4">
-            <div className="text-md">Let's connect!</div>
+            <div className="text-md">Let&apos;s connect!</div>
             <ul className="text-sm list-disc list-inside">
               <li>
                 <a className="text-blue-400" href="https://linkedin.com/in/abdibrokhim/" target="_blank" rel="noreferrer">LinkedIn</a>
