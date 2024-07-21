@@ -3,8 +3,8 @@
 use reqwest;
 use serde_json::json;
 use tauri::Builder;
-use std::env;
-use dotenv::dotenv;
+// use std::env;
+// use dotenv::dotenv;
 
 fn main() {
     Builder::default()
@@ -17,7 +17,7 @@ fn main() {
 async fn get_completion(prompt: &str, key: &str) -> Result<String, String> {
     println!("Prompt: {}", prompt);
 
-    dotenv().ok(); // Load environment variables from .env file
+    // dotenv().ok(); // Load environment variables from .env file
     let client = reqwest::Client::new();
     // let api_key = env::var("OPENAI_API_KEY").map_err(|_| "API key not set".to_string())?;
     let api_key = key;
