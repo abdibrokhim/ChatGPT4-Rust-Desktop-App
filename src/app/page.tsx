@@ -19,13 +19,22 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   // const [base64, setBase64] = useState<string | null>(null);
 
+  function isApiKey() {
+    return localStorage.getItem('openai-api-key') !== null;
+  }
+
   const handleGenerate = (userInput: string) => {
     console.log('================= Generating completion =================');
     console.log('prompt: ', userInput);
 
     if (userInput) {
       setLoading(true);
-      invoke<string>('get_completion', { prompt: userInput })
+      if (!isApiKey()) {
+        console.log('API Key is required');
+        return;
+      };
+
+      invoke<string>('get_completion', { prompt: userInput, key: localStorage.getItem('openai-api-key')?.toString() })
         .then(response => {
             console.log(response);
             let res = JSON.parse(response);
@@ -186,10 +195,11 @@ export default function Home() {
         <div className="flex h-full min-h-0 flex-col">
           <div className="scrollbar-trigger flex h-full w-full flex-1 items-start border-white/20">
             <nav className="flex h-full flex-1 flex-col space-y-1 p-2">
-              <div className="flex-col flex-1 transition-opacity duration-500 -mr-2 pr-2 overflow-y-auto">
+              <div className="flex-col flex-1 transition-opacity duration-500 -mr-2 pr-2">
                 <div className="sticky left-0 right-0 top-0 z-20 bg-token-sidebar-surface-primary pt-3.5 juice:static juice:pt-0">
                   <div className="pb-0.5 last:pb-0" tabIndex={0}>
-                    <a className="group flex h-10 items-center gap-2 rounded-lg bg-token-sidebar-surface-primary px-2 font-medium juice:gap-2.5 juice:font-normal hover:bg-token-sidebar-surface-secondary" href="/">
+                    <a className="group flex h-10 items-center gap-2 rounded-lg bg-token-sidebar-surface-primary px-2 font-medium juice:gap-2.5 juice:font-normal hover:bg-token-sidebar-surface-secondary" 
+                        onClick={() => setChatItems([])}>
                       <div className="h-7 w-7 flex-shrink-0">
                         <div className="gizmo-shadow-stroke relative flex h-full items-center justify-center rounded-full bg-token-main-surface-primary text-token-text-primary">
                           <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-2/3 w-2/3" role="img">

@@ -14,12 +14,13 @@ fn main() {
 }
 
 #[tauri::command]
-async fn get_completion(prompt: &str) -> Result<String, String> {
+async fn get_completion(prompt: &str, key: &str) -> Result<String, String> {
     println!("Prompt: {}", prompt);
 
     dotenv().ok(); // Load environment variables from .env file
     let client = reqwest::Client::new();
-    let api_key = env::var("OPENAI_API_KEY").map_err(|_| "API key not set".to_string())?;
+    // let api_key = env::var("OPENAI_API_KEY").map_err(|_| "API key not set".to_string())?;
+    let api_key = key;
 
     let payload = json!({
         "model": "gpt-4o",
