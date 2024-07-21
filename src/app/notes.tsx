@@ -10,8 +10,14 @@ export default function Notes() {
             </ul>
           </div>
           <div className="text-white pl-2 mt-4">
+            <div className="text-md text-yellow-500">Model</div>
+            <ul className="text-sm list-disc list-inside">
+              <li>GPT4o</li>
+            </ul>
+          </div>
+          <div className="text-white pl-2 mt-4">
             <div className="text-md text-green-500">
-              <a href="https://github.com/abdibrokhim/Custom-AI-Assistant" target="_blank" rel="noreferrer">Open Source</a>
+              <a href="https://github.com/abdibrokhim/ChatGPT4-Rust-Desktop-App" target="_blank" rel="noreferrer">Open Source</a>
             </div>
           </div>
           <div className="text-white pl-2 mt-4">
@@ -35,7 +41,7 @@ export default function Notes() {
                 <a className="text-blue-400" href="https://github.com/abdibrokhim/" target="_blank" rel="noreferrer">Github</a>
               </li>
               <li>
-                <a className="text-blue-400" href="https://linktr.ee/abdibrokhim/" target="_blank" rel="noreferrer">All socials</a>
+                <a className="text-blue-400" href="https://abdibrokhim/.vercel.app" target="_blank" rel="noreferrer">Website</a>
               </li>
             </ul>
           </div>
